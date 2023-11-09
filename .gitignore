@@ -1,3 +1,6 @@
+cf_backups
+cf_backups/*
+
 # Compiled class file
 *.class
 

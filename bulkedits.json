@@ -1,0 +1,14 @@
+{
+  "bobEatsYummySushi": "weird",
+  "commitPolicyJirasOn": "Hdpbfhrto",
+  "commitMustMatchRegex": "yes",
+  "commitRegex": ".*GENAI = (YES|NO).*",
+  "commitRegexMiss":  "It is mandatory to include GENAI = YES or GENAI = NO in your commit message",
+  "repos":[
+"BAN/b",
+"BAN/c",
+"BAN/d",
+"PROJECT_1/rep_1"
+]
+
+}
