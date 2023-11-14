@@ -20,6 +20,21 @@ of your Bitbucket Data Center repositories.
 }
 ```
 
+This "bulkedits.json" file will adjust those 4 config keys in the 4 repositories specified.  Repositories can be specified using "PROJECT/repo" slug style (e.g., "PROJECT_1/rep_1"), or if
+you happen to know a repository's Integer id, you can use that instead (e.g., "342").
+
+In this particular example the bulk-edit will setup a Regex rule that all commits must pass.
+
+Before:
+
+![image](https://github.com/gsylvie/control-freak-bulk-editor/assets/17037724/48397359-1ec8-418c-8a5e-c5862d00ccdf)
+
+After:
+
+![image](https://github.com/gsylvie/control-freak-bulk-editor/assets/17037724/518935a3-5787-4beb-8da2-46173b42a61a)
+
+
+
 ## Steps to use:
 
 1. Compile the code:  mvn clean package 
