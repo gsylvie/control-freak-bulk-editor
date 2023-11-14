@@ -20,10 +20,10 @@ of your Bitbucket Data Center repositories.
 }
 ```
 
-This "bulkedits.json" file will adjust those 4 config keys in the 4 repositories specified.  Repositories can be specified using "PROJECT/repo" slug style (e.g., "PROJECT_1/rep_1"), or if
+This "bulkedits.json" file will set values for those 4 config keys in the repositories listed.  Repositories can be specified using "PROJECT/repo" slug style (e.g., "PROJECT_1/rep_1"), or if
 you happen to know a repository's Integer id, you can use that instead (e.g., "342").
 
-In this particular example the bulk-edit will setup a Regex rule that all commits must pass.
+In this particular example the bulk-edit will setup a regex rule that all commits must pass.
 
 Before:
 
@@ -32,6 +32,19 @@ Before:
 After:
 
 ![image](https://github.com/gsylvie/control-freak-bulk-editor/assets/17037724/518935a3-5787-4beb-8da2-46173b42a61a)
+
+## How It Chooses Values For Unspecified Keys
+
+As expected, this tool will apply the value specified for each key in the "bulkedits.json" file.
+
+Recall that each key is a member of a single group.  For example, there is the "General Keys" group, the "Jira Keys" group, the "Jira Advanced Keys" group, etc.  You can see the official key
+grouping by taking a look at Control-Freak's REST endpoint at any time.  I've also included an extract of the grouping here at the bottom of this README.md.
+
+With this grouping in mind, how the tool decides which value to apply for the remaining keys (the keys not mentioned in the "bulkedits.json" file) can be a little complicated.  There are two cases:
+
+- Case A:  The unmentioned key is related to some of the mentioned keys. In this case the tool will go up the hierarchy.
+
+- Case B:  The unmentioned key is not related (not in the same group) as any of the other mentioned keys.  In this case the tool will leave the key's value alone (will leave it set to whatever value it already had).
 
 
 
