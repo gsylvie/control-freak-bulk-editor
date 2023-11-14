@@ -1,6 +1,9 @@
 cf_backups
 cf_backups/*
 
+target/
+*.tok
+
 # Compiled class file
 *.class
 

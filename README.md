@@ -1,7 +1,7 @@
 # control-freak-bulk-editor
 
-A tool to quickly apply [Control -Freak](https://marketplace.atlassian.com/apps/1217635/control-freak-commit-checkers-and-jira-hooks-for-bitbucket?hosting=datacenter&tab=overview) config overrides to a subset
-of your repositories.
+A tool to quickly apply [Control Freak](https://marketplace.atlassian.com/apps/1217635/control-freak-commit-checkers-and-jira-hooks-for-bitbucket?hosting=datacenter&tab=overview) config overrides to a subset
+of your Bitbucket Data Center repositories.
 
 ## Sample "bulkedits.json"
 
@@ -22,7 +22,7 @@ of your repositories.
 
 ## Steps to use:
 
-1. Compile the code:  javac \*.java
+1. Compile the code:  mvn clean package 
 
 2. Obtain a HTTP Authorization Token from Bitbucket and save it to ".controlFreak.tok"
 
@@ -31,7 +31,7 @@ of your repositories.
 4. Run the code:
 
 ```
-java -cp . ControlFreakBulkUpdate <USER> <BITBUCKET-URL> bulkedits.json
+java -jar ./target/control-freak-bulk-editor-2023.11.09.jar  <USER> <BITBUCKET-URL> bulkedits.json
 ```
 
 Note:  The \<USER\> must correspond to the HTTP Token saved during step #2,
